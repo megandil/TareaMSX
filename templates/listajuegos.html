@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Lista Juegos{% endblock %}
+{% block content %}
+<table>
+    <tbody>
+        <tr>
+            <th align="left">Nombre</th>
+            <th align="left">Desarrollador</th>
+            <th align="left">Detalle</th>
+        </tr>
+    {% for i in juegos -%}
+        <tr>
+            <td>{{ i.get("nombre") }}</td>
+            <td>{{ i.get("desarrollador") }}</td>
+            <td><a href="/juegos/{{ i.get("id") }}">Detalle</a></td>
+        </tr>
+    {% endfor-%}
+    </tbody>
+</table>
+{% endblock %}
