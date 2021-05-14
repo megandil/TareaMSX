@@ -1,4 +1,5 @@
 from flask import Flask, render_template,abort,request
+import os
 import json
 with open("MSX.json") as fichero:
     datos=json.load(fichero)
@@ -34,4 +35,6 @@ def juego(num):
     if ind == 0:
         abort(404)
     return render_template("juego.html",info=info)
-app.run('0.0.0.0',5000, debug=True)
+
+port=os.environ["PORT"]
+app.run('0.0.0.0',int(port), debug=True)
