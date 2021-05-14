@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Juego{% endblock %}
+{% block content %}
+<table>
+    <tbody>
+        <tr>
+            <th align="left">ID</th>
+            <th align="left">Nombre</th>
+            <th align="left">Sistema</th>
+            <th align="left">Distribuidor</th>
+            <th align="left">Desarrollador</th>
+            <th align="left">Categoría</th>
+            <th align="left">Año</th>
+        </tr>
+    {% for i in info -%}
+        <tr>
+            <td>{{ i.get("id") }}</td>
+            <td>{{ i.get("nombre") }}</td>
+            <td>{{ i.get("sistema") }}</td>
+            <td>{{ i.get("distribuidor") }}</td>
+            <td>{{ i.get("desarrollador") }}</td>
+            <td>{{ i.get("categoria") }}</td>
+            <td>{{ i.get("año") }}</td>
+        </tr>
+    {% endfor-%}
+    </tbody>
+</table>
+{% endblock %}
