@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Juegos{% endblock %}
+{% block content %}
+<form action="/listajuegos" method="post" >
+    <label>Introduce lo que quieres buscar:</label>
+    <input type="text" name="cadena" required>
+    <input type="submit" value="Buscar">
+</form>
+{% endblock %}
