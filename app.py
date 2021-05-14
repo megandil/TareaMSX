@@ -21,4 +21,13 @@ def listajuegos():
             dic={"nombre":i.get("nombre"),"desarrollador":i.get("desarrollador"),"id":i.get("id")}
             juegos.append(dic)
     return render_template("listajuegos.html",juegos=juegos)
+@app.route('/juegos/<int:num>')
+def juego(num):
+    game=num
+    info=[]
+    for i in datos:
+        if i.get("id") == game:
+            dic={"nombre":i.get("nombre"),"desarrollador":i.get("desarrollador"),"id":i.get("id"),"sistema":i.get("sistema"),"distribuidor":i.get("distribuidor"),"categoria":i.get("categoria"),"año":i.get("año")}
+            info.append(dic)
+    return render_template("juego.html",info=info)
 app.run('0.0.0.0',5000, debug=True)
